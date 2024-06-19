@@ -1,0 +1,35 @@
+{
+    "navbar": {
+      "home": "Home",
+      "certificates": "Certificates",
+      "products": "Products",
+      "logOut": "Log Out",
+      "logIn": "Log In",
+      "account": "Profile"
+    },
+    "hero": {
+      "title": "UAI Certification Portal"
+    },
+    "home": {
+      "content": "On this website, you can manage and review the inventories of the different products in real time",
+      "content2": "Text2"
+    },
+    "Footer":{
+      "content": " TATTERSALL Agroinputs"
+    },
+    
+    "Profile":{
+      "title": "User Form",
+      "name": "Name",
+      "nickname": "Nickname",
+      "role": "Role",
+      "career": "Career",
+      "save": "Save",
+      "stats": "See Statistics"      
+    },
+    "button":{
+      "language": "Language",
+      "spanish": "Spanish",
+      "english": "English"
+    }
+  }

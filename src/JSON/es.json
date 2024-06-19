@@ -1,0 +1,35 @@
+{
+    "navbar": {
+      "home": "Inicio",
+      "certificates": "Certificados",
+      "products": "Productos",
+      "logOut": "Cerrar Sesión",
+      "logIn": "Iniciar Sesión",
+      "account": "Perfil"
+    },
+    "hero": {
+      "title": "Portal de Certificaciones UAI"
+    },
+    "home": {
+      "content": "En esta web, podras manejar y revisar los inventarios de los distintos productos en tiempo real",
+      "content2": "Texto2"
+    },
+    "Footer":{
+      "content": "TATTERSALL Agroinsumos"
+    },
+    "Profile":{
+      "title": "Formulario Usuario",
+      "name": "Nombre",
+      "nickname": "Apodo",
+      "role": "Rol",
+      "career": "Carrera",
+      "save": "Guardar",
+      "stats": "Ver estadisticas"
+    },
+    
+    "button":{
+      "language": "Idioma",
+      "spanish": "Español",
+      "english": "Inglés"
+    }
+  }
