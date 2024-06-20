@@ -1,7 +1,11 @@
-// productos.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../CSS/productos.css';
+
+const formatDate = (dateString) => {
+  const date = new Date(dateString);
+  return date.toISOString().split('T')[0];
+};
 
 const Productos = () => {
   const [productos, setProductos] = useState([]);
@@ -14,7 +18,10 @@ const Productos = () => {
         const response = await axios.get('http://localhost:3001/productos');
         console.log('Respuesta de la API:', response.data);
         if (Array.isArray(response.data)) {
-          setProductos(response.data);
+          const sortedProductos = response.data.sort((a, b) => {
+            return new Date(a.fechaExp) - new Date(b.fechaExp);
+          });
+          setProductos(sortedProductos);
         } else {
           setError('La respuesta de la API no es un arreglo válido');
         }
@@ -25,9 +32,9 @@ const Productos = () => {
       }
     };
 
-    const interval = setInterval(fetchProductos, 5000); // Actualizar cada 5 segundos
+    const interval = setInterval(fetchProductos, 5000);
 
-    return () => clearInterval(interval); // Limpiar el intervalo al desmontar el componente
+    return () => clearInterval(interval);
   }, []);
 
   if (loading) {
@@ -45,12 +52,13 @@ const Productos = () => {
   return (
     <div className="productos-container">
       <h1>Lista de Productos</h1>
-      {console.log('Datos a renderizar:', productos)}
       <table>
         <thead>
           <tr>
             <th>Código</th>
             <th>Cantidad</th>
+            <th>Fecha expiración</th>
+            <th>Ultima extracción</th>
           </tr>
         </thead>
         <tbody>
@@ -58,6 +66,8 @@ const Productos = () => {
             <tr key={index}>
               <td>{producto.codigo}</td>
               <td>{producto.cantidad}</td>
+              <td>{formatDate(producto.fechaExp)}</td>
+              <td>{formatDate(producto.ultimaExt)}</td>
             </tr>
           ))}
         </tbody>
